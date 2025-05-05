@@ -1,0 +1,2 @@
+def openXML(file):
+    pass

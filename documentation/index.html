@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Documentation</title>
+    <style>
+        a {
+            padding-left: 0.5em;
+            padding-right: 0.5em;
+        }
+
+        .links {
+            font-size: 1.2em;
+        }
+    </style>
+</head>
+<body>
+    <div class="links"><a href="#general-functionality">Notes for General Functionality</a><a href="#name">Name</a><a href="#ingredients">Ingredients</a>
+    <a href="#steps">Steps</a><a href="#generation">Generation</a><a href="save-files">Save Files</a>
+    <a href="Images">Images</a><a href="#dark-mode">Dark Mode</a><a href="importing">Importing from Websites</a></div>
+    <div id="general-functionality" class="section">
+        <h2><u>Note for General Functionality</u></h2>
+        <p>When a text box is open, nothing in the main program is meant to respond until the text box or message is closed or handled.</p>
+    </div>
+
+    <hr>
+
+    <div id="name" class="section">
+        <h2><u>Name</u></h2>
+        <p>
+            The name of the recipe, provided at the opening of the program or changed later, will both 
+            the name of the outputted file and the title and header of the generated document.
+            <br>
+            When the program is opened, there is a window that appears asking for the name of the recipe
+            to be inputted. After the name is entered and the enter button is pressed, the rest of the 
+            program will begin.
+            <br>
+            To change the name of the recipe, press the "Change Recipe Name" button, and the enter name window will appear. 
+            <br>
+            To view the name of the recipe, press the "Change Recipe Name", and the current name will be present in the window. 
+        </p>
+    </div>
+
+    <hr>
+
+    <div id="ingredients" class="section">
+        <h2><u>Ingredients</u></h2>
+        <p>To edit ingredients, click the edit ingredients button. Type ingredients as they should appear. In the final document, 
+            each new line has a bullet point. 
+        </p>
+        <h3>Formatting</h3>
+        <p>To make a line a header, add &lt;h&gt; in front. This bolds and enlargens the line. Adding &lt;u&gt; underlines, and &lt;i&gt; italicizes</p>
+    </div>
+
+    <hr>
+
+    <div id="steps" class="section">
+        <h2><u>Steps</u></h2>
+        <h3>Adding Steps</h3>
+        <p>
+            To add a new step to the recipe, click the add step button. A window will appear requesting the name of the step. 
+            Once the name has been provided, the step will appear in the steps dropdown menu. New steps are appended to the end of the recipe.
+            Select the step to begin editing its content
+        </p>
+        <h3>Deleting Steps</h3>
+        <p>
+            To delete a step, first select the step in the dropdown menu. Once a step is selected, click the "Remove Step" button. A confirmation window
+            will appear, and shows the name of the step that is going to be deleted.
+        </p>
+        <h3>Editing Step Content</h3>
+        <p>
+            To edit the procedure for a step, select the step to be edited from the dropdown menu, the click the "Edit Step Text" button. 
+            A paragraph window will appear, in which the procedure for that step can be inputted. Once the enter button is clicked, the text is
+            stored. When the window is opened, any text present in that step will be present, and able to be edited. If a step has text, its
+            content in will be shown on the main window in the middle of the screen (if that step is selected). 
+        </p>
+    </div>
+
+    <hr>
+
+    <div id="generation" class="section">
+        <h2><u>Generation</u></h2>
+        <p>
+            Once the recipe is complete, click the "Generate" button. A window will appear asking to select a folder where the file will be placed. 
+            Once the directory has been provided, the program will begin generating the HTML document. The HTML document will be saved in the folder, 
+            and will be called [recipe name].html
+        </p>
+    </div>
+
+    <hr>
+
+    <div id="save-files" class="section">
+        <h2><u>Save Files</u></h2>
+        <h3>Save Recipe Button</h3>
+        <p>
+            To save the recipe, click the save recipe button. If a sae file has been opened, or if it was previously saved, the recipe will be
+            automatically saved to the most recent file. Otherwise, a file dialog will appear asking to save. 
+        </p>
+        <h3>Save As Button</h3>
+        <p>
+            The save as button opens a file dialog window asking where a file should be saved to. If closed, the operation is canceled. Otherwise, 
+            the file is saved and the location is stored if the Save Recipe button is clicked, or if CTRL+S is pressed. 
+        </p>
+    </div>
+
+    <hr>
+
+    <div id="images" class="section">
+        <h2><u>Images</u></h2>
+        <h3>Importing images</h3>
+        <p>
+            Recipes can have images in step text only. Images cannot be in ingredients, recipe names, or step titles. Images can be jpg, jpeg, or png.
+            To add an image to a step, click the "Add Image" button. A file dialog will appear asking for the image to be selected. Once the image is 
+            selected it will be made available
+        </p>
+        <h3>Using Images</h3>
+        <p>
+            To use an image, add the image's tag into a step text. The tag will look like: &lt;#&gt;
+            <br>
+            The image will appear in the outputted HTML document in the same spot as it was placed in the step. 
+        </p>
+        <h3>Image Viewer</h3>
+        <p>
+            To view any images in the program, click the image viewer button. Images will be listed with a tag and "x" button below. The tag will be
+            used to put an image in the recipe. The "x" button will delete the image. If an image is deleted, any instance of the image in a recipe will also 
+            be removed and replaced with nothing. 
+        </p>
+        <h3>Cached Images</h3>
+        <p>
+            When an image is imported, there is a copy stored as a pygame surface (in memory) and used for processing, as base64 (in memory) for html generation, 
+            and as a file (on disk) in a tmp directory. When images are deleted then the viewer is exited, the cache is rebuilt. Cache and tmp directory are 
+            cleared if the program is properly closed, and if a tmp directory exists on program startup then it is cleared. 
+        </p>
+    </div>
+
+    <hr>
+
+    <div id="dark-mode" class="section">
+        <h2><u>Dark Mode</u></h2>
+        <h3>Switching</h3>
+        <p>
+            In the top right of the screen is a button with either a sun or moon depending on the current mode, 
+            to switch between light and dark mode. 
+        </p>
+    </div>
+
+    <hr>
+
+    <div id="importing" class="section">
+        <h2><u>Importing from recipe websites</u></h2>
+        <h3>Support Domains</h3>
+        <p>The app supports</p>
+        <ul>
+            <li>ww.com</li>
+            <li>weightwatchers.com</li>
+            <li>allrecipes.com</li>
+            <li>cooking.newyorktimes.com</li>
+            <li>sallysbakingaddiction.com</li>
+            <li>forksoverknives.com</li>
+        </ul>
+        <h3>Importing</h3>
+        <p>To import a recipe, copy the url from a recipe on one of these sites. Click the Import from Website button, 
+            answer the question about saving, then paste the URL in the textbox that appears. Press the "X" to submit. 
+        </p>
+        <h3>Functionality</h3>
+        <p>Reading a website is not fast, nor does it always work. If failed, the app will try again, but has a limit of 5 
+            attempts. While importing, the attempt is displayed on the screen. If after importing, information is missing, 
+            it is possibly due to a restricted internet connection. 
+        </p>
+    </div>
+    
+</body>
+</html>
